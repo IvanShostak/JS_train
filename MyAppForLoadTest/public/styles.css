@@ -1,0 +1,53 @@
+html, body, div, span, h2,  a, img, form,  footer, header{
+                 
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+body {
+    font-family: Verdana;    
+    background-image: radial-gradient(closest-side at 50% 135%, #ffffff 50%, #eceff1 100%);
+}
+header{
+    background-color: #ffffff;
+    font-weight: bold;
+    padding: 15px 15px 15px 40px;
+    font-size: 30px;
+    position: relative;
+}
+
+.header-name{
+    position: absolute;              
+    top: 50%;                         
+    transform: translate(100%, -50%); 
+    font-family: sans-serif;
+}
+
+.logo{
+    height: 100px;
+}
+
+.welcome{
+    padding: 20px 0px 30px 0px;
+}
+
+h2{
+    text-align: center;
+}
+
+.form{
+    background-color: #ffffff;
+    padding: 40px 0 33px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    width: 20%;
+    height: 30%;
+    position: absolute;
+    left: 40%;
+    right: 40%;
+}
+
+.input{
+    margin: 10px 0px 10px 17px;
+}

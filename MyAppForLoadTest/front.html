@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type = "text/css" href = "styles.css">
+    <title>Universe</title>
+</head>
+<body>
+    <header>
+        <div id = 'logo'>
+            <a href ='/'>
+                <img class = 'logo' src = 'logo.jpg' alt = 'logo'>   
+            </a>
+        </div>
+        <div class = 'header-name'>MetaUniverse</div>
+    </header>
+    <div id = 'maincontent'>
+        <div class = 'welcome'> 
+            <h2>Welcome to MetaUniverse. Here you can create any hero!!!</h2>
+        </div>
+
+        <div class = 'form'>
+            <div class = 'form-content'>
+                <span class = 'creating-instruction'>Create your person</span>
+
+                <form method= "post" style= "border: none;" action = "/save">
+                    <input type = 'text' name = 'name' class = 'input' required placeholder="your name"></br>
+                    <input type = 'number' name = 'age' class = 'input' required placeholder="age"></br>
+                    <select name = 'gender' class = 'input'>
+                        <option value = 'male'>male</option>
+                        <option value = 'female'>female</option>
+                    </select></br>
+                    <input type = 'submit' class = 'input'>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
