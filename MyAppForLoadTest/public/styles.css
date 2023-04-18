@@ -1,15 +1,8 @@
-html, body, div, span, h2,  a, img, form,  footer, header{
-                 
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-}
-
 body {
     font-family: Verdana;    
     background-image: radial-gradient(closest-side at 50% 135%, #ffffff 50%, #eceff1 100%);
 }
+
 header{
     background-color: #ffffff;
     font-weight: bold;
@@ -27,6 +20,13 @@ header{
 
 .logo{
     height: 100px;
+    background-color: transparent;
+}
+
+label {
+    position: absolute!important;
+    width: 0px!important;
+    overflow: hidden!important;
 }
 
 .welcome{
