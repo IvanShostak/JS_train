@@ -14,13 +14,14 @@ jobs:
         with:
           node-version: 18
       - name: Go to PlayWright tests folder
-        run: cd Playwright
-      - name: Install dependencies
         run: npm ci
+        working-directory: ./Playwright
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+        working-directory: ./Playwright
       - name: Run Playwright tests
         run: npx playwright test MetaUniverse.spec.js 
+        working-directory: ./Playwright
       - uses: actions/upload-artifact@v3
         if: always()
         with:
