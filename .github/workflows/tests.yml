@@ -5,8 +5,8 @@ on:
   pull_request:
     branches: [main, master]
 env:
-  DOCKER_USERNAME: ${{ secrets.ivanshostak228 }}
-  DOCKER_PASSWORD: ${{ secrets.dckr_pat_pdHHrSKIlZtsBZjMCNwSA89lpJ4 }}
+  DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+  DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
   
 jobs:
   test:
