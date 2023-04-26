@@ -37,7 +37,7 @@ jobs:
       - name: Run the image in a container
         uses: addnab/docker-run-action@v3
         with:
-            image: ${{ secrets.DOCKERHUB_USERNAME }}/myapp:latest
+            image: ${{ secrets.DOCKER_USERNAME }}/myapp:latest
           
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
