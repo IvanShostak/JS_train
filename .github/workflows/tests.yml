@@ -4,6 +4,10 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
+env:
+  DOCKER_USERNAME: ${{ secrets.ivanshostak228 }}
+  DOCKER_PASSWORD: ${{ secrets.dckr_pat_pdHHrSKIlZtsBZjMCNwSA89lpJ4 }}
+  
 jobs:
   test:
     timeout-minutes: 60
@@ -13,9 +17,23 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Go to PlayWright tests folder
+      - name: Dependencies
         run: npm ci
         working-directory: ./Playwright
+        
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ env.DOCKERHUB_USERNAME }}
+          password: ${{ env.DOCKERHUB_TOKEN }}
+      - name: Build Docker image
+        run: |
+          docker build -t myapp:latest .
+      - name: Push Docker image
+        run: |
+          docker tag myapp:latest ${{ env.DOCKER_USERNAME }}/myapp:latest
+          docker push ${{ env.DOCKER_USERNAME }}/myapp:latest
+          
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
         working-directory: ./Playwright
