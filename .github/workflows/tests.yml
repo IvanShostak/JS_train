@@ -21,7 +21,7 @@ jobs:
       - name: run docker container
         run: |
           docker build . -t express
-          docker run -it -p 3000:3000 express
+          docker run -p 3000:3000 express
         working-directory: ./MyAppForLoadTest
           
       - name: Install Playwright Browsers
