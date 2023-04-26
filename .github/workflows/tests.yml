@@ -27,10 +27,12 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t myapp:latest .
+        working-directory: ./MyAppForLoadTest
       - name: Push Docker image
         run: |
           docker tag myapp:latest ${{ secrets.DOCKER_USERNAME }}/myapp:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/myapp:latest
+        working-directory: ./MyAppForLoadTest
           
       - name: Run the image in a container
         uses: addnab/docker-run-action@v3
