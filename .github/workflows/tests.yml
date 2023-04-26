@@ -24,8 +24,8 @@ jobs:
           cd ./MyAppForLoadTest
           docker build . -t express
       - name: run docker container 
+        uses: addnab/docker-run-action@v3
         with:
-          uses: addnab/docker-run-action@v3
           options: -v ${{ github.workspace }}:/app
           run: |
             docker run -p 3000:3000 express
