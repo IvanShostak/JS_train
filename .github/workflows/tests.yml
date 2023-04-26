@@ -26,12 +26,12 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t myapp:latest .
-        working-directory: ./Playwright
+        working-directory: ./MyAppForLoadTest
       - name: Push Docker image
         run: |
           docker tag myapp:latest ${{ secrets.DOCKER_USERNAME }}/myapp:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/myapp:latest
-        working-directory: ./Playwright
+        working-directory: ./MyAppForLoadTest
           
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
