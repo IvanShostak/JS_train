@@ -36,6 +36,7 @@ jobs:
           
       - name: Run the image in a container
         run : docker run -p 3000:3000 ${{ secrets.DOCKER_USERNAME }}/myapp:latest
+        working-directory: ${{ github.workspace }}:/MyAppForLoadTest/app
           
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
