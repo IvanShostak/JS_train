@@ -15,14 +15,15 @@ jobs:
         with:
           node-version: 18
       - name: Dependencies
-        run: npm ci
+        run: |
+          npm ci
         working-directory: ./Playwright
         
       - name: run docker container
         run: |
+          cd ./MyAppForLoadTest
           docker build . -t express
           docker run -p 3000:3000 express
-        working-directory: ./MyAppForLoadTest
           
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
