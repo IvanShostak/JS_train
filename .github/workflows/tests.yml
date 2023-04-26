@@ -25,6 +25,7 @@ jobs:
           docker build . -t express
       - name: run docker container 
         with:
+          uses: addnab/docker-run-action@v3
           options: -v ${{ github.workspace }}:/app
           run: |
             docker run -p 3000:3000 express
