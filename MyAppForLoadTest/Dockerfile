@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY . .
 
+EXPOSE 3000
+
 CMD ["node", "express.js"]
 
 # docker build . -t express
