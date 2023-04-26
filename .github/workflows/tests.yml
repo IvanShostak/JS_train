@@ -19,11 +19,15 @@ jobs:
           npm ci
         working-directory: ./Playwright
         
-      - name: run docker container
+      - name: run docker image
         run: |
           cd ./MyAppForLoadTest
           docker build . -t express
-          docker run -p 3000:3000 express
+      - name: run docker container 
+        with:
+          options: -v ${{ github.workspace }}:/app
+          run: |
+            docker run -p 3000:3000 express
           
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
