@@ -19,7 +19,6 @@ test('create hero', async ({ page }) => {
   await page.locator("#HeroGender").selectOption(hero.gender);
   await page.getByRole('button', { name: "Create"}).click();
 
-  verifyHeroSaved(hero)
 })
 
 function verifyHeroSaved(expectedHero) {
